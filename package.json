@@ -1,19 +1,16 @@
 {
   "name": "project-week-1",
-  "version": "1.0.0",
-  "description": "package.json for project week 1",
-  "main": "main.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "npm start"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "start": "npm run dev"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Bram-ter/project-week-1.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Bram-ter/project-week-1/issues"
-  },
-  "homepage": "https://github.com/Bram-ter/project-week-1#readme"
+  "devDependencies": {
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
 }
