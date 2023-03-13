@@ -1,0 +1,19 @@
+{
+  "name": "project-week-1",
+  "version": "1.0.0",
+  "description": "package.json for project week 1",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bram-ter/project-week-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bram-ter/project-week-1/issues"
+  },
+  "homepage": "https://github.com/Bram-ter/project-week-1#readme"
+}
