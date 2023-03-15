@@ -1,3 +1,5 @@
+import { insertProjects } from "./ui"
+
 /* Routing */
 function onRouteChange() {
     const hash = window.location.hash
@@ -26,6 +28,7 @@ function onRouteChange() {
           fetch('views/mywork.html')
           .then((response) => response.text())
           .then(html => routerView.innerHTML = html)
+          insertProjects()
           break;
      
          default:

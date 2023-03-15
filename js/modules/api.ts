@@ -1,23 +1,19 @@
 export async function requestUser( username: string ){
-  let url = `https://api.github.com/users/${username}`
+  let url = `https://api.github.com/users/${username}/repos`
 
-  // const args = {'username': username, 'repo': repo }
   const response = await fetch(url)
 
   if ( response.ok ) {
       let result = await response.json();
       // result.apiArguments = args
 
-      // const name = document.querySelector('h1') as HTMLHeadingElement
-      // name.innerHTML = result.login
+      return result
       
-      return result;
-
-  } else {
+    } else {
       console.log(response);
-      throw new Error('HTTP ERROR!!!')
-      window.location.hash = "error"
-  }
+      throw new Error("HTTP ERROR!!!");
+      window.location.hash = "error";
+    }
 }
 
 export async function logUser () {
