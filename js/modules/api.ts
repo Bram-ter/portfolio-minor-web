@@ -19,7 +19,6 @@ export async function requestUser( username: string ){
 export async function logUser () {
   try {
       const data = await requestUser('Bram-ter');
-      console.log(data)
       return data;
   } catch (error) {
       console.log(error)

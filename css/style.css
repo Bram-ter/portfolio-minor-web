@@ -102,6 +102,10 @@ body main article ul li a img {
   fill: var(--indigo);
 }
 
+body section {
+  height: 100dvh;
+}
+
 /* main section canvas {
     position: fixed;
     top: 0;
