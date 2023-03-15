@@ -48,17 +48,16 @@ main {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  justify-content: center;
+  background-color: var(--light-white);
   height: 100dvh;
 }
 
 main article {
-  display: grid;
-  place-content: center;
-  background-color: var(--light-white);
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
   width: 50%;
-  height: inherit;
-  aspect-ratio: 1;
+  justify-content: start;
 }
 
 main article ul {
@@ -102,3 +101,4 @@ main article ul li a img {
     background-color: #f9f9f9;
   }
 } */
+

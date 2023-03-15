@@ -1,11 +1,13 @@
+/// <reference path="globals.d.ts" />
+
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js' 
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 // Scene
 const scene = new THREE.Scene()
 
-// ! Non-null assertion operator
-const canvas = document.querySelector('canvas') as HTMLCanvasElement;
+const canvas = document.querySelector('canvas') as HTMLCanvasElement
 
 /**
  * Object
@@ -39,33 +41,35 @@ window.addEventListener('resize', () =>
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
-window.addEventListener('dblclick', () =>
-{
-    const fullscreenElement = document.fullscreenElement
+canvas.addEventListener('dblclick', () => {
+  const fullscreenElement = document.fullscreenElement
 
-    if(!fullscreenElement)
-    {
-        if(canvas.requestFullscreen)
-        {
-            canvas.requestFullscreen()
-        }
-        else if(canvas.requestFullscreen)
-        {
-            canvas.requestFullscreen()
-        }
+  if (!fullscreenElement) {
+    if (canvas.requestFullscreen) {
+      canvas.requestFullscreen();
+    } else if (canvas.webkitRequestFullscreen) {
+      canvas.webkitRequestFullscreen();
     }
-    else
-    {
-        if(document.exitFullscreen)
-        {
-            document.exitFullscreen()
-        }
-        else if(document.exitFullscreen)
-        {
-            document.exitFullscreen()
-        }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if ((Element as any).document.webkitExitFullscreen) {
+        (Element as any).webkitExitFullscreen();
     }
-})
+  }
+});
+
+// const loader = new GLTFLoader();
+
+// loader.load( '/cool.glb', function ( gltf ) {
+
+// 	scene.add( gltf.scene );
+
+// }, undefined, function ( error ) {
+
+// 	console.error( error );
+
+// } );
 
 /**
  * Camera
@@ -92,12 +96,8 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 /**
  * Animate
  */
-const clock = new THREE.Clock()
-
 const tick = () =>
 {
-    const elapsedTime = clock.getElapsedTime()
-
     // Update controls
     controls.update()
 

@@ -4,26 +4,13 @@
   --light-white: #FDF7FF;
 }
 
-.button button {
-  padding: 1em 2em;
-}
-
-.button {
-  width: auto;
+button {
   margin-left: 0.3rem;
   margin-top: 1.3rem;
-  max-height: 50px;
-}
-
-button {
-  --box-size: 1em;
   background-color: transparent;
   border: 2px solid #2E20CA;
-  border-radius: 0;
-  box-sizing: border-box;
-  padding: 0.5em 2em;
   position: relative;
-  text-align: center;
+  padding: 1em 2em;
   transition: all 0.3s ease-in-out;
 }
 
@@ -106,4 +93,19 @@ button:hover span:nth-child(3),
 button:hover span:nth-child(4) {
   right: 0;
   width: 0;
+}
+
+main article > *:not(button) {
+  flex: 1 1 100%;
+  margin: unset;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+main article > button {
+  width: 13em;
+}
+
+main article > button:last-of-type {
+  width: 10em;
 }
