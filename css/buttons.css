@@ -4,19 +4,20 @@
   --light-white: #FDF7FF;
 }
 
-button {
-  margin-left: 0.3rem;
-  margin-top: 1.3rem;
+article > a {
+  display: block;
+  margin-left: 0.3em;
+  margin-top: 1.3em;
+  text-decoration: none;
   background-color: transparent;
   border: 2px solid #2E20CA;
   position: relative;
-  padding: 1em 2em;
   transition: all 0.3s ease-in-out;
 }
 
-button::before {
+article > a::before {
   content: " ";
-  width: 1.5625rem;
+  width: 1.5625em;
   height: 2px;
   background: #2E20CA;
   top: 50%;
@@ -27,10 +28,11 @@ button::before {
   transition: 0.3s linear, width 0.3s linear;
 }
 
-button a {
-  font-size: 1.125em;
-  line-height: 1.33333em;
-  padding-left: 2em;
+article > a p {
+  margin-bottom: .85em;
+  margin-top: .85em;
+  font-size: 1.2em;
+  padding-left: 4em;
   display: block;
   text-align: left;
   transition: all 0.3s ease-in-out;
@@ -39,73 +41,72 @@ button a {
   color: #2E20CA;
 }
 
-button span:nth-child(1) {
+a span:nth-child(1) {
   height: 2px;
-  width: 1.5625rem;
+  width: 1.5625em;
   top: -2px;
-  left: 0.625rem;
+  left: 0.625em;
   position: absolute;
   background-color: #FDF7FF;
   transition: width 0.5s ease-out, left 0.3s ease-out;
 }
 
-button span:nth-child(3) {
+a span:nth-child(3) {
   height: 2px;
-  width: 1.5625rem;
-  right: 1.875rem;
+  width: 1.5625em;
+  right: 1.875em;
   bottom: -2px;
   position: absolute;
   background-color: #FDF7FF;
   transition: width 0.5s ease-out, right 0.3s ease-out;
 }
 
-button span:nth-child(4) {
+a span:nth-child(4) {
   height: 2px;
-  width: 0.625rem;
-  right: 0.625rem;
-  bottom: -2px;
+  width: 0.625em;
+  right: 0.625em;
   position: absolute;
   background-color: #FDF7FF;
   transition: width 0.5s ease-out, right 0.3s ease-out;
 }
 
-button:hover {
+article > a:hover {
   color: #FDF7FF;
   background: #2E20CA;
 }
 
-button:hover::before {
+article > a:hover::before {
   width: 1rem;
   background-color: #FDF7FF;
 }
 
-button:hover a {
+article > a:hover p {
   color: #FDF7FF;
-  padding-left: 1.5em;
+  padding-left: 3em;
 }
 
-button:hover span:nth-child(1) {
+article > a:hover span:nth-child(1) {
   left: -2px;
   width: 0px;
 }
 
-button:hover span:nth-child(3),
-button:hover span:nth-child(4) {
+article > a:hover span:nth-child(3),
+article > a:hover span:nth-child(4) {
   right: 0;
   width: 0;
 }
 
-main article > *:not(button) {
+main article > *:not(a) {
   flex: 1 1 100%;
   margin: unset;
   padding-top: 16px;
   padding-bottom: 16px;
 }
 
-main article > button {
+article > a {
   width: 13em;
 }
 
-main article > button:last-of-type {
+article > a:nth-of-type(2) {
   width: 10em;
 }

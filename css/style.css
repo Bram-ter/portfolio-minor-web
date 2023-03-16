@@ -103,7 +103,35 @@ body main article ul li a img {
 }
 
 body section {
+  display: flex;
   height: 100dvh;
+}
+
+body section:nth-child(even) div {
+  order: 1;
+}
+
+body section:nth-child(even) article {
+  order: 2;
+}
+
+body section article {
+  flex: 1 1 55%;
+  background-color: var(--light-white);
+}
+
+body section div {
+  flex: 1 1 45%;
+}
+
+body section div {
+  display: flex;
+  place-content: center;
+}
+
+body section div > img {
+  width: 100%;
+  object-fit: cover;
 }
 
 /* main section canvas {
