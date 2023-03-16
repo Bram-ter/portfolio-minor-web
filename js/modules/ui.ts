@@ -11,23 +11,26 @@ console.log(userProjects)
 const sections = userProjects.map((repo: any) => {
   const section = document.createElement('section');
   section.innerHTML = `
-    <article>
-      <h2>${repo.name}</h2>
-
-      <p>${repo.description}</p>
-
-      <a>
-        <span></span>
-        <p>My work</p>
-        <span></span>
-        <span></span>
-      </a>
-
-    </article>
-
     <div>
-      <img src="https://picsum.photos/200" alt="" />
+        <article>
+
+          <h2>${repo.name}</h2>
+
+          <p>${repo.description}</p>
+
+          <a href="${repo.html_url}" target="_blank">
+            <span></span>
+            <p>View project</p>
+            <span></span>
+            <span></span>
+          </a>
+
+        </article>
     </div>
+
+    <figure>
+      <img src="https://picsum.photos/200" alt="" />
+    </figure>
   `;
   return section;
 });

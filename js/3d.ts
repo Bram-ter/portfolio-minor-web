@@ -25,12 +25,22 @@ const sizes = {
     height: window.innerHeight
 }
 
-window.addEventListener('resize', () => 
-{
+/**
+ * Screen resize
+ */
+
+window.addEventListener('load', () => {
     // Update sizes
     sizes.width = window.innerWidth / 2
     sizes.height = window.innerHeight
 
+    if (window.innerWidth < 700) { 
+      sizes.width = window.innerWidth
+      sizes.height = window.innerHeight / 2
+      console.log("klein")
+    } else {
+      console.log("groot")
+    }
     // Update camera
     camera.aspect = sizes.width / sizes.height
     camera.updateProjectionMatrix()
@@ -40,6 +50,10 @@ window.addEventListener('resize', () =>
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
+
+/**
+ * Fullscreen toggle
+ */
 
 canvas.addEventListener('dblclick', () => {
   const fullscreenElement = document.fullscreenElement
