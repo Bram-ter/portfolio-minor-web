@@ -29,7 +29,10 @@ const sizes = {
  * Screen resize
  */
 
-window.addEventListener('load', () => {
+window.addEventListener('load', handleLoadAndResize);
+window.addEventListener('resize', handleLoadAndResize);
+
+function handleLoadAndResize() {
     // Update sizes
     sizes.width = window.innerWidth / 2
     sizes.height = window.innerHeight
@@ -49,7 +52,7 @@ window.addEventListener('load', () => {
     renderer.setSize(sizes.width, sizes.height)
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-})
+}
 
 /**
  * Fullscreen toggle

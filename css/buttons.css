@@ -37,7 +37,6 @@ div > a p {
   margin-top: .85em;
   padding-left: 4em;
   padding-right: 2em;
-  display: block;
   text-align: left;
   transition: all 0.3s ease-in-out;
   text-transform: uppercase;

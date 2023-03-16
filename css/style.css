@@ -1,6 +1,6 @@
 
 :root {
-  --indigo: #2E20CA;
+  --indigo: #20ca31;
   --light-white: #FDF7FF;
   /*
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -19,11 +19,15 @@
   */
 }
 
+/* ::-webkit-scrollbar-thumb {
+  background-color: #2E20CA;
+} */
+
 /* Fonts */
 
 @font-face {
-  font-family: RobotoFlex;
-  src: url(../fonts/RobotoFlex.ttf) format('truetype-variations');
+  font-family: merriweather-light;
+  src: url(../fonts/Merriweather-Light.ttf) format('truetype-variations');
 }
 
 /* Global */
@@ -31,22 +35,30 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: RobotoFlex;
+  font-family: merriweather-light;
   color: var(--indigo);
-  overflow: hidden;
-}
-
-canvas {
-  outline: none;
 }
 
 ul {
   margin: 0;
 }
 
+h1, h2, h3, h4 {
+  margin: unset;
+  margin-bottom: .5em;
+}
+
 h1 {
-  font-size: 3.2em;
+  font-size: 2em;
   line-height: 1.1;
+}
+
+h2 {
+  font-size: 2.6em;
+}
+
+h3 {
+  font-size: 1.2em;
 }
 
 body > a {
@@ -58,15 +70,19 @@ body > a {
   padding: .5em;
 
   text-decoration: none;
-  font-size: 1em;
-  transition: .3s;
+  font-size: 1.1em;
   color: var(--indigo);
 }
 
 body > a:before {
   content: '👈';
   margin-right: 5px;
-  font-size: 1.5em;
+  font-size: 1.4em;
+  transition: .75s;
+}
+
+body > a:hover:before {
+  transform: translate(-4px);
 }
 
 body main {
@@ -79,21 +95,24 @@ body main {
 body main article {
   display: flex;
   justify-content: center;
-  margin-bottom: 1em;
+  padding: 2em;
 }
 
 body main article div {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  width: 100%;
+}
+
+body main article div h3 {
+  flex: 1 1 100%;
 }
 
 body footer ul {
   position: absolute;
   bottom: 0;
   left: 0;
-
-  width: 100%;
+  
   display: flex;
   gap: 1em;
 
@@ -117,11 +136,8 @@ body footer ul li a img {
 
 body section {
   display: flex;
-  height: 100dvh;
-}
-
-body section:nth-child(even) div {
-  order: 1;
+  flex-direction: column;
+  height: 70dvh;
 }
 
 body section > div {
@@ -129,6 +145,7 @@ body section > div {
   justify-content: center;
   align-items: center;
   flex: 1 1 55%;
+  padding: 2em;
   background-color: var(--light-white);
 }
 
@@ -144,6 +161,12 @@ body section > figure img {
 }
 
 @media (min-width: 700px) {
+  footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+
   canvas {
     position: fixed;
     right: 0;
@@ -151,12 +174,35 @@ body section > figure img {
   }
 
   body main {
-    flex-wrap: wrap;
     height: 100dvh;
   }
 
   body main article {
     width: 50%;
-    margin-bottom: 0;
+    padding: 0;
   }
+
+  body main article div {
+    width: 80%;
+  }
+
+  /* My work */
+
+  body section {
+    flex-direction: row;
+    height: 100dvh;
+  }
+
+  body section:nth-child(even) div {
+    order: 1;
+  }
+
+  body section > div {
+    padding: none;
+  }
+
+  body section div article {
+    width: 50%;
+  }
+  
 }
